@@ -69,6 +69,7 @@ $ docker build -t enterprise-xyz-integration .
 
 ```shell
 $ cd enterprise-abc-integration
+$ npm install
 $ docker build -t enterprise-abc-integration .
 ```
 
@@ -76,7 +77,7 @@ $ docker build -t enterprise-abc-integration .
 
 ```shell
 $ cd enterprise-123-integration
-$ docker build -t enterprise-123-integration.
+$ docker build -t enterprise-123-integration .
 ```
 
 #### Execute `docker-compse.yaml`
