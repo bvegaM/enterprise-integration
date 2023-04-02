@@ -1,0 +1,42 @@
+version: '3.6'
+services:
+  
+  enterprise-123:
+    image: enterprise-123-integration:latest
+    build: ./enterprise-123-integration
+    hostname: company-123
+    container_name: company-123
+    networks:
+      - mynetwork
+    ports:
+      - "8000:8000"
+  
+  enterprise-abc:
+    image: enterprise-abc-integration:latest
+    build: ./enterprise-abc-integration
+    hostname: company-abc
+    container_name: company-abc
+    networks:
+      - mynetwork
+    ports:
+      - "3000:3000"
+  
+  enterprise-xyz:
+    image: enterprise-xyz-integration:latest
+    build: ./enterprise-xyz-integration
+    hostname: company-xyz
+    container_name: company-xyz
+    environment:
+      - company.digital.source.host=company-123:8000
+      - company.digital.and.office.source.host=company-abc:3000
+    depends_on:
+      - enterprise-123
+      - enterprise-abc
+    networks:
+      - mynetwork
+    ports:
+      - "8080:8080"
+  
+networks:
+  mynetwork:
+    driver: bridge

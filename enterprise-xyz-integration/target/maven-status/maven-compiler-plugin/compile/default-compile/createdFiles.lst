@@ -1,0 +1,5 @@
+ec/edu/ups/msoft/xyz/model/Client.class
+ec/edu/ups/msoft/xyz/controller/ClientController.class
+ec/edu/ups/msoft/xyz/MySpringBootApplication.class
+ec/edu/ups/msoft/xyz/model/Client$ClientBuilder.class
+ec/edu/ups/msoft/xyz/routes/ClientRouter.class
